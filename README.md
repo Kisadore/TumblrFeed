@@ -16,16 +16,16 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] App fetches posts from a different Tumblr blog
+- [X] App fetches posts from a different Tumblr blog
 - [X] App has a refresh control to update the table view
 
 ## Video Walkthrough
 
 <div>
-    <a href="https://www.loom.com/share/b01f3a57ce43444aba9a57c7caf1610e">
+    <a href="https://www.loom.com/share/b4afcf8da27f4181a7396fd55791eae9">
     </a>
-    <a href="https://www.loom.com/share/b01f3a57ce43444aba9a57c7caf1610e">
-      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/b01f3a57ce43444aba9a57c7caf1610e-with-play.gif">
+    <a href="https://www.loom.com/share/b4afcf8da27f4181a7396fd55791eae9">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/b4afcf8da27f4181a7396fd55791eae9-with-play.gif">
     </a>
   </div>
 
@@ -33,6 +33,7 @@ The following **optional** features are implemented:
 
 Describe any challenges encountered while building the app.
 - The only trouble I had was trying to fetch posts from different Tumblr blogs, I kept getting errors so I decided not to implement it in the project, but I might try again and re-submit.
+    - Update: I was able to fetch posts form a different blog and I now know what I was doing wrong :)
 
 ## License
 
