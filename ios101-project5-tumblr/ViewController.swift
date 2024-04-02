@@ -45,10 +45,25 @@ class ViewController: UIViewController, UITableViewDataSource {
                 
         fetchPosts()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedIndexPath, animated: animated)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
+        let selectedPost = posts[selectedIndexPath.row]
+        guard let detailViewController = segue.destination as? DetailViewController else { return }
+        detailViewController.post = selectedPost
+    }
 
 
     @objc func fetchPosts() {
-        let url = URL(string: "https://api.tumblr.com/v2/blog/techcrunch/posts/photo?api_key=1zT8CiXGXFcQDyMFG7RtcfGLwTdDjFUJnZzKJaWTmgyK4lKGYk")!
+        let url = URL(string:"https://api.tumblr.com/v2/blog/humansofnewyork/posts/photo?api_key=1zT8CiXGXFcQDyMFG7RtcfGLwTdDjFUJnZzKJaWTmgyK4lKGYk")!
+        //url to fetch post from a different blog
+        //let url = URL(string: "https://api.tumblr.com/v2/blog/techcrunch/posts/photo?api_key=1zT8CiXGXFcQDyMFG7RtcfGLwTdDjFUJnZzKJaWTmgyK4lKGYk")!
         let session = URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 print("❌ Error: \(error.localizedDescription)")
